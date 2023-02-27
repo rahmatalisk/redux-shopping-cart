@@ -8,15 +8,11 @@ const ProductContainer = () => {
   return (
     <div className="productWrapper">
       <div className="productContainer" id="lws-productContainer">
-        {/* {items.map((it) => (
-          <ProductItem key={it.id} product={it} />
-        ))} */}
-
-        {
-          (items.length === 0) ? <p>No product Found</p> : items.map((it) => (
-            <ProductItem key={it.id} product={it} />
-          ))
-        }
+        {items.length === 0 ? (
+          <p>No product Found. But you can add.</p>
+        ) : (
+          items.map((it) => <ProductItem key={it.id} product={it} />)
+        )}
       </div>
       <AddProduct />
     </div>
